@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1 Edit Book Review
+  form(action=`/books/${book.id}` method="POST")
+    div.form-group
+      label(for="title") Title:
+      input(type="text" name="title" id="title" value=book.title required)
+    div.form-group
+      label(for="author") Author:
+      input(type="text" name="author" id="author" value=book.author required)
+    div.form-group
+      label(for="genre") Genre:
+      input(type="text" name="genre" id="genre" value=book.genre required)
+    div.form-group
+      label(for="description") Description:
+      textarea(name="description" id="description" required)= book.description
+    div.form-group
+      label(for="comment") Comment:
+      textarea(name="comment" id="comment" required)= book.comment
+    div.form-group
+      label(for="rating") Rating:
+      input(type="number" name="rating" id="rating" value=book.rating min="0" max="5" step="0.1" required)
+    div.form-group
+      button(type="submit") Save Changes

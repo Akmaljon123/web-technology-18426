@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  h1 Add a New Book Review
+  form(action="/books" method="POST")
+    div.form-group
+      label(for="title") Title:
+      input(type="text" name="title" id="title" placeholder="e.g., The Great Gatsby" required)
+      small.form-hint The complete title of the book
+    
+    div.form-group
+      label(for="author") Author:
+      input(type="text" name="author" id="author" placeholder="e.g., F. Scott Fitzgerald" required)
+      small.form-hint The author's full name
+    
+    div.form-group
+      label(for="genre") Genre:
+      input(type="text" name="genre" id="genre" placeholder="e.g., Fiction, Mystery, Science Fiction" required)
+      small.form-hint The book's category or type
+    
+    div.form-group
+      label(for="description") Description:
+      textarea(name="description" id="description" placeholder="Brief summary of the book's content")
+      small.form-hint What the book is about (optional)
+    
+    div.form-group
+      label(for="comment") Comment:
+      textarea(name="comment" id="comment" placeholder="Your personal thoughts about the book" required)
+      small.form-hint Your review and opinions
+    
+    div.form-group
+      label(for="rating") Rating:
+      input(type="number" name="rating" id="rating" min="1" max="5" step="0.1" placeholder="3.5" required)
+      small.form-hint Your rating (1-5, decimals allowed)
+    
+    button(type="submit") Submit Review
+  a(href="/books") Back to Reviews
